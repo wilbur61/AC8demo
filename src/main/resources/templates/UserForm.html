@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>showData</title>
+</head>
+<body>
+<p th:text="${FormVar.id}" ></p>
+<p th:text="${FormVar.name}" ></p>
+<p th:text="${FormVar.email}" ></p>
+<form th:action="@{/Getuser}" method="post">
+ <input type="text" name="id"    />
+ <input type="text" name="name"      />
+ <input type="text" name="email"  />
+ <input type="submit" name="Submit" />
+</form>
+</body>
+</html>
