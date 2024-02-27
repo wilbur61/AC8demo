@@ -1,18 +1,31 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>showData</title>
+ <meta charset="UTF-8">
+ <title>showData</title>
 </head>
 <body>
-<p th:text="${FormVar.id}" ></p>
-<p th:text="${FormVar.name}" ></p>
-<p th:text="${FormVar.email}" ></p>
+<!--
+Brian Henriquez
+3:57 PM
+In Thymeleaf, you can have certain elements be rendered conditionally
+on some value stored on the back-end. For example, in this lab we can
+use a session attribute along with the th:if attribute to conditionally
+render a div block with the values inside only being rendered if the
+parent is rendered. In userForm.html you can change the portion of the
+body that manages the stored session attribute with the following:
+-->
+<div th:if="${FormVar.name}">
+ <p th:text="${FormVar.id}" ></p>
+ <p th:text="${FormVar.name}" ></p>
+ <p th:text="${FormVar.email}" ></p>
+</div>
+
 <form th:action="@{/Getuser}" method="post">
- <input type="text" name="id"    />
- <input type="text" name="name"      />
- <input type="text" name="email"  />
- <input type="submit" name="Submit" />
+ <input type="text" name="id"    placeholder="Enter ID" />
+ <input type="text" name="name"  placeholder="Enter Name" />
+ <input type="text" name="email" placeholder="Enter Email" />
+ <input type="submit" name="Submit" value="Submit" />
 </form>
 </body>
 </html>

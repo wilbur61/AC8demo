@@ -16,6 +16,7 @@ public class Session_Controller {
      */
     @ModelAttribute("u")
     public User setUpUserForm() {
+        System.out.println("IN setUpUserForm()");
         return new User();
     }
    @GetMapping("/dologin")
